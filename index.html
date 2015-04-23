@@ -24,13 +24,18 @@
 	<script src="assets/plugins/pace/pace.min.js"></script>
 	<!-- ================== END BASE JS ================== -->
     
-    <!-- ================== START MIXPANEL ================== -->
+    <!-- ================== START SEGMENT ================== -->
     <script type="text/javascript">
-        (function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
-        for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
-        mixpanel.init("3cb32c0342d2e3bcc46b644a1c2d3618");
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.0.1";
+        analytics.load("E1JIABszL8Drp2tuVhubladpvsd7haQZ");
+    }}();
     </script>
-    <!-- ================== END MIXPANEL ================== -->
+    <!-- ================== END SEGMENT =================== -->
+
+    <!-- ================== START AUTOPILOT =================== -->
+    <script type="text/javascript">(function(){var c=encodeURIComponent,s="SCRIPT",d=document,e=d.createElement(s),t=d.getElementsByTagName(s)[0],p="t="+c(d.title||"")+"&u="+c(d.location.href||"")+"&r="+c(d.referrer||"");e.src="https://api.autopilothq.com/anywhere/178977508ab04e32b4c9bf0b84c32f416a3945fc248e4194899bb70013dc4be6?"+p;e.type="text/javascript";e.async=true;t.parentNode.insertBefore(e, t);})();
+    </script>
+    <!-- ================== END AUTOPILOT ==================== -->
 </head>
 <body data-spy="scroll" data-target="#header-navbar" data-offset="51">
     <!-- begin #page-container -->
@@ -86,7 +91,7 @@
         <div id="home" class="content has-bg home">
             <!-- begin content-bg -->
             <div class="content-bg">
-                <img src="assets/img/background.jpg" alt="Home" />
+                <img src="assets/img/background-hd.jpg" alt="Home" />
             </div>
             <!-- end content-bg -->
             <!-- begin container -->
@@ -894,27 +899,23 @@
 	<script>    
         $(document).ready(function() {
             App.init();
+            analytics.page("Landing", "Index");
             
-            mixpanel.register({
-                "Site": "cleawing.com",
-                "Page": "index"
-            });
-
-            mixpanel.track("Page loaded")
-
-            mixpanel.track_links("#header-navbar a", "Navigation click", function(el) {
+            analytics.trackLink($("#header-navbar a").toArray(), "Clicked Navigation", function(el) {
                 return {
                     "Kind": "navbar",
                     "Source": "top_navbar",
-                    "ClickText": $(el).text()
+                    "url" : $(el)[0].href,
+                    "TargetText": $(el).text()
                 };
             }); 
 
-            mixpanel.track_links("#home a", "Action click", function(el) {
+            analytics.trackLink($("#home a").toArray(), "Clicked Call to Action", function(el) {
                 return {
                     "Kind": "teaser",
                     "Source": "top_teaser",
-                    "ClickText": $(el).text()
+                    "url" : $(el)[0].href,
+                    "TargetText": $(el).text()
                 };
             });
         });
