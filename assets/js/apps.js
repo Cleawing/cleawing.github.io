@@ -40,9 +40,13 @@ var handleHeaderNavigationState = function() {
             var totalScroll = $(window).scrollTop();
             var headerHeight = $('#header').height();
             if (totalScroll >= headerHeight) {
-                $('#header').addClass('navbar-small');
+                // $('#header').addClass('navbar-small');
+                $('#header').addClass('navbar-inverse');
+                $('#header').removeClass('navbar-transparent');
             } else {
-                $('#header').removeClass('navbar-small');
+                // $('#header').removeClass('navbar-small');
+                $('#header').removeClass('navbar-inverse');
+                $('#header').addClass('navbar-transparent');
             }
         }
     });
@@ -112,7 +116,7 @@ var handleHeaderScrollToAction = function() {
         e.preventDefault();
         e.stopPropagation();
         var target = $(this).attr('href');
-        var headerHeight = 50;
+        var headerHeight = 70;
         $('html, body').animate({
             scrollTop: $(target).offset().top - headerHeight
         }, 500);
