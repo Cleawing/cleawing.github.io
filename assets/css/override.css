@@ -6,3 +6,7 @@
 	padding-top: 3px;
 	padding-bottom: 5px;
  }
+
+ h2.content-title {
+ 	text-transform: uppercase;
+ }

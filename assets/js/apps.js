@@ -117,6 +117,7 @@ var handleHeaderScrollToAction = function() {
         e.stopPropagation();
         var target = $(this).attr('href');
         var headerHeight = 70;
+        console.log($(target).offset().top - headerHeight);
         $('html, body').animate({
             scrollTop: $(target).offset().top - headerHeight
         }, 500);
