@@ -489,12 +489,12 @@
                     <div class="col-md-3 col-sm-6">
                         <!-- begin platforms -->
                         <div class="work">
-                            <div class="image center-block">
-                                <a href="#"><img src="assets/img/aws-logo.png" alt="Amazon Web Services" /></a>
+                            <div class="image">
+                                <a href="http://aws.amazon.com/" target="_blank" title="Amazon Web Services"><img src="assets/img/aws-logo.png" alt="Amazon Web Services" /></a>
                             </div>
                             <div class="desc">
-                                <span class="desc-title">Aliquam molestie</span>
-                                <span class="desc-text">Lorem ipsum dolor sit amet</span>
+                                <span class="desc-title">Amazon Web Services</span>
+                                <span class="desc-text">Cloud Computing Services</span>
                             </div>
                         </div>
                         <!-- end platforms -->
@@ -504,12 +504,12 @@
                     <div class="col-md-3 col-sm-6">
                         <!-- begin platforms -->
                         <div class="work">
-                            <div class="image center-block">
-                                <a href="#"><img src="assets/img/do-logo.png" alt="Digital Ocean" /></a>
+                            <div class="image">
+                                <a href="https://www.digitalocean.com/?refcode=23836a4f832a" target="_blank" title="DigitalOcean"><img src="assets/img/do-logo.png" alt="DigitalOcean" /></a>
                             </div>
                             <div class="desc">
-                                <span class="desc-title">Quisque at pulvinar lacus</span>
-                                <span class="desc-text">Lorem ipsum dolor sit amet</span>
+                                <span class="desc-title">DigitalOcean</span>
+                                <span class="desc-text">Simple cloud hosting, built for developers</span>
                             </div>
                         </div>
                         <!-- end platforms -->
@@ -519,12 +519,12 @@
                     <div class="col-md-3 col-sm-6">
                         <!-- begin platforms -->
                         <div class="work">
-                            <div class="image center-block">
-                                <a href="#"><img src="assets/img/gce-logo.png" alt="Google Compute Engine" /></a>
+                            <div class="image">
+                                <a href="https://cloud.google.com/" target="_blank" title="Google Cloud Platform"><img src="assets/img/gce-logo.png" alt="Google Cloud Platform" /></a>
                             </div>
                             <div class="desc">
-                                <span class="desc-title">Vestibulum et erat ornare</span>
-                                <span class="desc-text">Lorem ipsum dolor sit amet</span>
+                                <span class="desc-title">Google Cloud Platform</span>
+                                <span class="desc-text">Hosting Services &amp; Cloud Support</span>
                             </div>
                         </div>
                         <!-- end platforms -->
@@ -534,12 +534,12 @@
                     <div class="col-md-3 col-sm-6">
                         <!-- begin platforms -->
                         <div class="work">
-                            <div class="image center-block">
-                                <a href="#"><img src="assets/img/azure-logo.jpg" alt="Microsoft Azure" /></a>
+                            <div class="image">
+                                <a href="https://azure.microsoft.com/" target="_blank" title="Microsoft Azure"><img src="assets/img/azure-logo.jpg" alt="Microsoft Azure" /></a>
                             </div>
                             <div class="desc">
-                                <span class="desc-title">Sed vitae mollis magna</span>
-                                <span class="desc-text">Lorem ipsum dolor sit amet</span>
+                                <span class="desc-title">Microsoft Azure</span>
+                                <span class="desc-text">Cloud Computing Platform &amp; Services</span>
                             </div>
                         </div>
                         <!-- end platforms -->
@@ -818,31 +818,7 @@
 	<script src="assets/plugins/jquery-cookie/jquery.cookie.js"></script>
 	<script src="assets/plugins/scrollMonitor/scrollMonitor.js"></script>
 	<script src="assets/js/apps.js"></script>
+    <script src="assets/js/index.js"></script>
 	<!-- ================== END BASE JS ================== -->
-	
-	<script>    
-        $(document).ready(function() {
-            App.init();
-            analytics.page("Landing", "Index");
-            
-            analytics.trackLink($("#header-navbar a").toArray(), "Clicked Navigation", function(el) {
-                return {
-                    "Kind": "navbar",
-                    "Source": "top_navbar",
-                    "url" : $(el)[0].href,
-                    "TargetText": $(el).text()
-                };
-            }); 
-
-            analytics.trackLink($("#home a").toArray(), "Clicked Call to Action", function(el) {
-                return {
-                    "Kind": "teaser",
-                    "Source": "top_teaser",
-                    "url" : $(el)[0].href,
-                    "TargetText": $(el).text()
-                };
-            });
-        });
-	</script>
 </body>
 </html>
