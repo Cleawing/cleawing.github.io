@@ -14,3 +14,10 @@
  .work {
  	text-align: center;
  }
+
+p {
+	font-size: 16px;
+}
+ .info p {
+ 	text-align: left;
+ }
