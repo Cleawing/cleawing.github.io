@@ -1,3 +1,7 @@
+analytics.ready(function(){
+  ll('init', '6ea954880eed51314b8ec0c-b4038618-e94b-11e4-b23f-009c5fda0a25', {trackPageView: false, domain: 'cleawing.com'});
+});
+
 $(document).ready(function() {
     App.init();
     analytics.page("Landing", "Index");
