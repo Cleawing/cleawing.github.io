@@ -21,3 +21,9 @@ p {
  .info p {
  	text-align: left;
  }
+ 
+.nav > li > div.fa-nav  {
+	 display: block;
+	 margin-top: 25px;
+	 margin-left: 10px;
+ }
